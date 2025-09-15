@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #1e3a8a;    /* blue-800 - bold, trustworthy */
+  --brand-secondary: #1e40af;  /* blue-700 - slightly lighter */
+  --brand-accent: #dc2626;     /* red-600 - strong conservative red */
+  --brand-gold: #f59e0b;       /* amber-500 - premium accent */
+  --text-primary: #0f172a;     /* slate-900 - deep readable text */
+  --text-secondary: #475569;   /* slate-600 - muted text */
+  --bg-primary: #ffffff;       /* pure white */
+  --bg-secondary: #f8fafc;     /* slate-50 - subtle background */
+  --border-subtle: #e2e8f0;    /* slate-200 - clean borders */
+  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  --gradient-accent: linear-gradient(90deg, #dc2626 0%, #f59e0b 100%);
+}
+
+@theme inline {
+  --color-background: var(--bg-secondary);
+  --color-foreground: var(--text-primary);
+  --color-brand: var(--brand-primary);
+  --color-accent: var(--brand-accent);
+  --color-muted: var(--bg-secondary);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Merriweather', ui-serif, Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-subtle: #334155;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, #f1f5f9 100%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Typography Hierarchy */
+.headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.headline-hero {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.text-premium {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-meta {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Component Styles */
+.card-premium {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.75rem;
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: var(--brand-accent);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.accent-bar {
+  height: 4px;
+  background: var(--gradient-accent);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: var(--brand-accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--brand-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Card hover effects */
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Premium shadows and effects */
+.shadow-premium {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient {
+  border-image: var(--gradient-accent) 1;
+}
