@@ -104,10 +104,9 @@ export default function HomepageLayout({ items }: { items: any[] }) {
                 category={a.Category ?? undefined}
                 section={a.Section ?? undefined}
                 createdAtISO={a.created_at}
-                imageUrl={a["Hero Image URL"] as any}
+                imageUrl={a["Hero Image URL"] ?? undefined}
                 image2={a.image2}
                 image3={a.image3}
-                variant={i % 2 === 0 ? "compact" : "list"}
               />
             );
             

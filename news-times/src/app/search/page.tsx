@@ -68,7 +68,7 @@ async function SearchResults({ query }: { query: string }) {
     return (
       <div className="text-center py-12">
         <h2 className="text-xl font-semibold text-gray-600 mb-2">No results found</h2>
-        <p className="text-gray-500">No articles found for "{query}". Try different keywords.</p>
+        <p className="text-gray-500">No articles found for &quot;{query}&quot;. Try different keywords.</p>
       </div>
     );
   }
@@ -76,7 +76,7 @@ async function SearchResults({ query }: { query: string }) {
   return (
     <div>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        {articles.length} result{articles.length !== 1 ? 's' : ''} for "{query}"
+        {articles.length} result{articles.length !== 1 ? 's' : ''} for &quot;{query}&quot;
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article) => (

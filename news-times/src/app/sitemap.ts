@@ -24,21 +24,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${SITE_URL}/`,
       lastModified: new Date(),
-      changeFrequency: "hourly",
+      changeFrequency: "hourly" as const,
       priority: 1,
     },
     // Section pages
     ...uniqueSections.map(section => ({
       url: `${SITE_URL}/section/${encodeURIComponent(section)}`,
       lastModified: new Date(),
-      changeFrequency: "daily",
+      changeFrequency: "daily" as const,
       priority: 0.8,
     })),
     // Article pages
     ...(articles || []).map(article => ({
       url: `${SITE_URL}/article/${article.id}`,
       lastModified: new Date(article.created_at),
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
   ];

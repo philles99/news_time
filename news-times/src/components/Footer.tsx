@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants";
 
 export default function Footer() {
@@ -11,14 +12,14 @@ export default function Footer() {
           <div className="mb-6">
             <h4 className="font-semibold text-white mb-4">Sections</h4>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-              <a href="/section/Politics" className="text-gray-300 hover:text-white transition-colors">Politics</a>
-              <a href="/section/Economics" className="text-gray-300 hover:text-white transition-colors">Economics</a>
-              <a href="/section/Elections" className="text-gray-300 hover:text-white transition-colors">Elections</a>
-              <a href="/section/Trade" className="text-gray-300 hover:text-white transition-colors">Trade</a>
-              <a href="/section/Finance" className="text-gray-300 hover:text-white transition-colors">Finance</a>
-              <a href="/section/Sport" className="text-gray-300 hover:text-white transition-colors">Sport</a>
-              <a href="/section/Culture" className="text-gray-300 hover:text-white transition-colors">Culture</a>
-              <a href="/section/World Events" className="text-gray-300 hover:text-white transition-colors">World Events</a>
+              <Link href="/section/Politics" className="text-gray-300 hover:text-white transition-colors">Politics</Link>
+              <Link href="/section/Economics" className="text-gray-300 hover:text-white transition-colors">Economics</Link>
+              <Link href="/section/Elections" className="text-gray-300 hover:text-white transition-colors">Elections</Link>
+              <Link href="/section/Trade" className="text-gray-300 hover:text-white transition-colors">Trade</Link>
+              <Link href="/section/Finance" className="text-gray-300 hover:text-white transition-colors">Finance</Link>
+              <Link href="/section/Sport" className="text-gray-300 hover:text-white transition-colors">Sport</Link>
+              <Link href="/section/Culture" className="text-gray-300 hover:text-white transition-colors">Culture</Link>
+              <Link href="/section/World Events" className="text-gray-300 hover:text-white transition-colors">World Events</Link>
             </div>
           </div>
         </div>

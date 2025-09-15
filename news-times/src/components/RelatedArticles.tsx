@@ -18,7 +18,7 @@ export default async function RelatedArticles({
   const supabase = getServerSupabaseClient();
   
   // Build query to find related articles
-  let query = supabase
+  const query = supabase
     .from('Published')
     .select('id, "Main Header", Headline, Author, Section, Category, created_at, "Hero Image URL"')
     .neq('id', currentArticleId)
@@ -55,7 +55,18 @@ export default async function RelatedArticles({
   return <RelatedArticlesList articles={fallback} title="Latest Articles" />;
 }
 
-function RelatedArticlesList({ articles, title }: { articles: any[], title: string }) {
+interface Article {
+  id: number;
+  "Main Header": string | null;
+  Headline: string | null;
+  Author: string | null;
+  Section: string | null;
+  Category: string | null;
+  created_at: string;
+  "Hero Image URL": string | null;
+}
+
+function RelatedArticlesList({ articles, title }: { articles: Article[], title: string }) {
   return (
     <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
       <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">{title}</h3>

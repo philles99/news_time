@@ -4,7 +4,7 @@ import ViewTracker from "@/components/ViewTracker";
 import ImageCarousel from "@/components/ImageCarousel";
 import RelatedArticles from "@/components/RelatedArticles";
 import { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_URL } from "@/lib/constants";
 import { formatDateToDisplay, formatRelativeTimeFromNow } from "@/lib/format";
 
 type Params = { params: { id: string } };

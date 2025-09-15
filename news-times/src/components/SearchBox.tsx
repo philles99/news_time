@@ -141,13 +141,13 @@ export default function SearchBox() {
                   onClick={handleResultClick}
                   className="text-blue-600 hover:text-blue-700 text-sm font-medium"
                 >
-                  View all results for "{query}"
+                  View all results for &quot;{query}&quot;
                 </Link>
               </div>
             </>
           ) : (
             <div className="p-4 text-center text-gray-500 text-sm">
-              No articles found for "{query}"
+              No articles found for &quot;{query}&quot;
             </div>
           )}
         </div>

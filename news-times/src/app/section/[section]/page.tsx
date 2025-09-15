@@ -83,7 +83,7 @@ export default async function SectionPage({ params, searchParams }: Params) {
                 category={a.Category ?? undefined}
                 section={a.Section ?? undefined}
                 createdAtISO={a.created_at}
-                imageUrl={a["Hero Image URL"] as any}
+                imageUrl={a["Hero Image URL"] ?? undefined}
                 image2={a.image2}
                 image3={a.image3}
               />

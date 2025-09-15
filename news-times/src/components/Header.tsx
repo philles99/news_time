@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { SECTIONS, SITE_NAME } from "@/lib/constants";
+import { SECTIONS } from "@/lib/constants";
 import { useState } from "react";
 import SearchBox from "@/components/SearchBox";
 

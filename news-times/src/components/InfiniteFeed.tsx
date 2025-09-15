@@ -5,7 +5,18 @@ import { useSearchParams } from "next/navigation";
 import HomepageLayout from "@/components/HomepageLayout";
 import FeedSkeleton from "@/components/skeletons/FeedSkeleton";
 
-type Article = any;
+interface Article {
+  id: number;
+  "Main Header": string | null;
+  Headline: string | null;
+  Author: string | null;
+  Section: string | null;
+  Category: string | null;
+  created_at: string;
+  "Hero Image URL": string | null;
+  image2?: string | null;
+  image3?: string | null;
+}
 
 const PAGE_SIZE = 10;
 
@@ -75,7 +86,7 @@ export default function InfiniteFeed({ initial, section }: InfiniteFeedProps) {
     });
     observer.observe(target);
     return () => observer.disconnect();
-  }, [page, hasMore]);
+  }, [page, hasMore, searchParams, section]);
 
   return (
     <div className="flex flex-col gap-6">
