@@ -1,0 +1,21 @@
+{
+  "name": "The World Times",
+  "short_name": "World Times",
+  "description": "Independent reporting on politics, economics, culture and world events.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#101435",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
