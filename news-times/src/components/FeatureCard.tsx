@@ -16,6 +16,7 @@ export default function FeatureCard({ item }: { item: any }) {
           aspectRatio="wide"
           showDots={true}
           showArrows={true}
+          priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         <div className="absolute top-4 left-4">

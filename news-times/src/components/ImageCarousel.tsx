@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { normalizeImageSrc } from "@/lib/images";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
@@ -12,6 +13,7 @@ interface ImageCarouselProps {
   showDots?: boolean;
   showArrows?: boolean;
   autoHeight?: boolean;
+  priority?: boolean;
 }
 
 export default function ImageCarousel({
@@ -22,6 +24,7 @@ export default function ImageCarousel({
   showDots = true,
   showArrows = true,
   autoHeight = false,
+  priority = false,
 }: ImageCarouselProps) {
   // Filter out null/undefined images immediately
   const initialImages = images.filter((img): img is string => Boolean(img));
@@ -77,16 +80,19 @@ export default function ImageCarousel({
     }
   };
 
-  // If only one image, render simple img component
+  // If only one image, render optimized Image component
   if (validImages.length === 1) {
     const imageSrc = normalizeImageSrc(validImages[0]) || "/placeholder.svg";
     
     return (
       <div className={`relative overflow-hidden rounded-lg bg-gray-100 ${aspectClasses[aspectRatio]} ${className}`}>
-        <img
+        <Image
           src={imageSrc}
           alt={alt}
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover"
+          priority={priority}
           onError={() => handleImageError(validImages[0])}
         />
       </div>
@@ -114,11 +120,14 @@ export default function ImageCarousel({
     <div className={`relative group ${className}`}>
       {/* Main Image Container */}
       <div className={`relative overflow-hidden rounded-lg bg-gray-100 ${!autoHeight ? aspectClasses[aspectRatio || "video"] : ""}`}>
-        <img
+        <Image
           key={validImages[safeCurrentIndex]} // Force re-render when image changes
           src={currentImageSrc}
           alt={`${alt} (${safeCurrentIndex + 1}/${validImages.length})`}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover transition-opacity duration-300"
+          priority={priority && safeCurrentIndex === 0}
           onError={() => handleImageError(validImages[safeCurrentIndex])}
         />
 

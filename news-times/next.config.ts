@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
       { protocol: "http", hostname: "**" },
       // Add more domains as needed
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  experimental: {
+    optimizeCss: true,
   },
 };
 

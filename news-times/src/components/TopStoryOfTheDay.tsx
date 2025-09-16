@@ -94,6 +94,7 @@ export default function TopStoryOfTheDay({ article }: TopStoryProps) {
                 showDots={true}
                 showArrows={true}
                 autoHeight={false}
+                priority={true}
                 className="h-full w-full [&>div:last-child]:lg:mt-3 [&>div:last-child]:mt-0 [&>div:last-child]:lg:relative [&>div:last-child]:absolute [&>div:last-child]:bottom-2 [&>div:last-child]:left-1/2 [&>div:last-child]:-translate-x-1/2 [&>div:last-child]:lg:transform-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
