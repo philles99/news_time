@@ -35,9 +35,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  other: {
-    "google-adsense-account": "ca-pub-9566106160234103",
-  },
 };
 
 export default function RootLayout({
@@ -47,6 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-9566106160234103" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${headlineSerif.variable} antialiased min-h-screen bg-[var(--background)] text-[var(--foreground)]`}>
         <Header />
         <div className="mx-auto max-w-6xl px-4 py-4">
